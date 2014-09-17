@@ -31,14 +31,15 @@ MorseAlphabet::MorseAlphabet()
     letter_['z'] = "--..";
 
     // Number initialize
-    number_['1'] = ".----";
-    number_['2'] = "..---";
-    number_['3'] = "...--";
-    number_['4'] = "....-";
-    number_['5'] = ".....";
-    number_['6'] = "-....";
-    number_['7'] = "--...";
-    number_['8'] = "---..";
-    number_['9'] = "----.";
-    number_['0'] = "-----";
+    letter_['1'] = ".----";
+    letter_['2'] = "..---";
+    letter_['3'] = "...--";
+    letter_['4'] = "....-";
+    letter_['5'] = ".....";
+    letter_['6'] = "-....";
+    letter_['7'] = "--...";
+    letter_['8'] = "---..";
+    letter_['9'] = "----.";
+    letter_['0'] = "-----";
 }
+

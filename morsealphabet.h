@@ -7,10 +7,11 @@
 typedef QMap<QChar, QString> symbol;
 class MorseAlphabet
 {
-    symbol letter_;
-    symbol number_;
+    symbol letter_;    
    public:
     MorseAlphabet();
+    const symbol &getLetter() const { return letter_;}    
 };
+
 
 #endif // MORSEALPHABET_H
