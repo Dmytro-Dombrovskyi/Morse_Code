@@ -22,12 +22,15 @@ public:
 
 private slots:
     void on_loadButton_clicked();
-    void on_translateButton_clicked();
+
     void on_saveDecodedButton_clicked();
 
     void on_saveCodedButton_clicked();
 
-    void on_pushButton_clicked();
+    void on_pushButton_clicked();    
+
+public slots:
+    void on_translateButton_clicked();
 
 private:
     Ui::Widget *ui;

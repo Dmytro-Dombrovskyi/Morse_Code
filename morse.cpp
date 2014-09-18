@@ -11,6 +11,10 @@ Widget::Widget(QWidget *parent) :
     ui(new Ui::Widget)
 {
     ui->setupUi(this);
+    connect(ui->textBrowser, SIGNAL(textChanged()), this,
+            SLOT(on_translateButton_clicked()));
+    connect(ui->textBrowser, SIGNAL(selectionChanged()), this,
+            SLOT(on_translateButton_clicked()));
 }
 
 Widget::~Widget()
@@ -26,9 +30,8 @@ void Widget::on_loadButton_clicked()
     if(!fileName.isEmpty())
     {
         QFile file(fileName);
-        if(!file.open(QIODevice::ReadOnly)) return;
-        dataDecoded = file.readAll();
-        ui->textBrowser->setText(dataDecoded);
+        if(!file.open(QIODevice::ReadOnly)) return;       
+        ui->textBrowser->setText(file.readAll());
     }
 }
 
@@ -36,7 +39,7 @@ void Widget::on_loadButton_clicked()
 void Widget::on_translateButton_clicked()
 {
     dataCoded.clear();
-
+    dataDecoded = ui->textBrowser->toPlainText();
     if(!dataDecoded.isEmpty())
     {
         for(int i = 0; i < dataDecoded.size(); ++i)
